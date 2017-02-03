@@ -1,0 +1,51 @@
+<template name="bookManage">
+    <p id="bookFormFailed" class="center-align red-text text-accent-3">Formularz zawiera błędy</p>
+    {{#if bookToEdit}}
+        {{> editBook}}
+    {{else}}
+        {{> addBook}}
+    {{/if}}
+</template>
+
+<template name="addBook">
+    {{#autoForm schema=booksSchema id="bookManageForm" validation="blur" preserveForm="false" type="method" meteormethod="addBook"}}
+        <div>
+            <p> Podaj nazwę *</p>
+            {{> afQuickField name='name' class="input-field col s12"}}
+        </div>
+        <div>
+            <p> Wybierz gatunek *</p>
+            {{> afFieldInput name='type' options=types}}
+        </div>
+        <div>
+            <p> Wybierz dostępne języki *</p>
+            {{> afFieldInput name='languages' options=languages}}
+        </div>
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary">Zapisz</button>
+            <button id="closeButton" class="waves-effect btn-flat">Anuluj</button>
+        </div>
+    {{/autoForm}}
+</template>
+
+<template name="editBook">
+    {{#autoForm schema=booksSchema id="bookManageForm" validation="blur" preserveForm="false" type="method" meteormethod="updateBook"}}
+        {{> afQuickField name='id' type='hidden' value=bookToEdit._id}}
+        <div>
+            <p> Podaj nazwę *</p>
+            {{> afQuickField name='name' class="input-field col s12" value=bookToEdit.name}}
+        </div>
+        <div>
+            <p> Wybierz gatunek *</p>
+            {{> afFieldInput name='type' options=types value=bookToEdit.type}}
+        </div>
+        <div>
+            <p> Wybierz dostępne języki *</p>
+            {{> afFieldInput name='languages' options=languages value=bookToEdit.languages}}
+        </div>
+        <div class="center-align">
+            <button type="submit" class="btn btn-primary">Zapisz</button>
+            <button id="closeButton" class="waves-effect btn-flat">Anuluj</button>
+        </div>
+    {{/autoForm}}
+</template>

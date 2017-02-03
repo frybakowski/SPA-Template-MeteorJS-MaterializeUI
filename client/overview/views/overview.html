@@ -1,0 +1,29 @@
+<template name="overview">
+    <nav>
+        <div class="nav-wrapper light-blue">
+            <div class="width-90-perc margin-auto">
+                <a href="#" class="brand-logo">Lista książek</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a id="add" class="waves-effect waves-light green btn">+ Dodaj nową</a></li>
+                    <li><a id="logout" class="waves-effect waves-light red lighten-1 btn">Wyloguj</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+
+        <ul class="collection">
+            {{#each books}}
+                <li href="#!" class="collection-item books">
+                    <span>{{name}}</span>
+                    <span class="float-right edit-tools">
+                        <span id="bookEdit" data-bi="{{_id}}" class="padding-3 mouse-pointer">Edytuj</span>
+                        <span id="bookRemove" data-bi="{{_id}}" class="padding-3 mouse-pointer">Usuń</span>
+                    </span>
+                </li>
+            {{/each}}
+        </ul>
+    </div>
+</template>
+
