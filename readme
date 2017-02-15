@@ -1,7 +1,7 @@
 SPA Template - MeteorJS + Materialize UI 
 
 Instalation
------------------------------------------------------
+
 Linux / OSX
 curl https://install.meteor.com/ | sh
 
@@ -10,7 +10,7 @@ https://install.meteor.com/windows
 
 
 App start
------------------------------------------------------
+
 meteor npm install
 
 prod version: meteor --production
