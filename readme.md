@@ -1,4 +1,4 @@
-SPA Template - MeteorJS + Materialize UI 
+# SPA Template - MeteorJS + Materialize UI 
 
 
 # Instalation
@@ -8,14 +8,23 @@ SPA Template - MeteorJS + Materialize UI
 curl https://install.meteor.com/ | sh
 ```
 ## Windows
+```
 https://install.meteor.com/windows
+```
 
 
 # App start
 
+```
 meteor npm install
+```
 
-prod version: meteor --production
-dev version: meteor
-
+Production version
+```
+meteor --production
+```
+Developer version
+```
+meteor
+```
 username: user, password: user
